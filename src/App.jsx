@@ -1,10 +1,11 @@
 
 import './App.css'
+import { Nav } from './components/Nav';
 
 export function App() {
-  
-
-  return <div className='text-xl'>Hello Tailwind friends</div>;
+  return <div className="p-10 xl:px-24">
+    <Nav />
+  </div>;
 }
 
 

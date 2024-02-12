@@ -3,6 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    body {
+        font-family: 'Nunito Sans Variable', sans-serif;
+    }
+}
+
 @layout utilities {
     .flex-center {
         @apply flex items-center justify-center;

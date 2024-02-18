@@ -19,15 +19,21 @@ export function CardItem({ item }) {
                 <div className="font-bold">{item.price}$</div>
             </div>
 
-            <div className="flex justify-between pl-30">
+            <div className="flex justify-between pl-32">
                 <div className="flex space-x-6">
                     <div>
                         <div className="font-bold">SIZE</div>
-                        <Select title="SIZES" options={SIZES} />
+                        <Select
+                            title=""
+                            options={SIZES}
+                            className={"w-16 p-1"} />
                     </div>
                     <div>
                         <div className="font-bold">QTY</div>
-                        <Select title="QTY" options={QTY} />
+                        <Select
+                            title=""
+                            options={QTY}
+                            className={"w-16 p-1"} />
                     </div>
                 </div>
                 <button>

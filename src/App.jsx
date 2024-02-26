@@ -33,7 +33,7 @@ export function App() {
     localStorage.setItem("isDarkMode", window.document.documentElement.classList.contains("dark"));
   };
 
-  return <div className="p-10 xl:px-24 animate-fadeIn">
+  return <div className="p-10 xl:px-24 animate-fadeIn dark:bg-night">
     <Nav onClickShoppingBtn={() => setIsSidebarOpen(true)} />
     <ShopDetail />
     <NewArrivalSection items={SHOE_LIST} />

@@ -1,6 +1,6 @@
 import { Card } from "./Card";
 
-export function NewArrivalSection({ items }) {
+export function NewArrivalSection({ items, onClickCard }) {
     return (
         <div className="mt-20">
             <div className="flex items-center justify-center">
@@ -11,7 +11,7 @@ export function NewArrivalSection({ items }) {
             <div className="mt-10 justify-between grid grid-cols-1 gap-x-6 gap-y-24 md:grid-cols-2 xl:grid-cols-[repeat(3,25%)]">
                 {
                     items.map((item) => (
-                        <Card key={item.id} item={item} />
+                        <Card key={item.id} item={item} onClick={onClickCard} />
                     ))
                 }
             </div>

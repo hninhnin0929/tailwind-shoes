@@ -40,7 +40,7 @@ export function ShopDetail({shoe, onClickAdd}) {
             {/* Shoe buttons and links */}
             <div className="space-x-10">
                 <button 
-                    onClick={()=> onClickAdd(shoe, form.qty, form.size)}
+                    onClick={() => onClickAdd(shoe, form.qty, form.size)}
                     className="h-14 w-44 bg-black text-white hover:bg-gray-900 btn-press-anim active:bg-gray-700 dark:bg-white dark:text-black">
                     Add to bag
                 </button>

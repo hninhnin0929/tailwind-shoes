@@ -28,10 +28,20 @@ export function App() {
     localStorage.setItem("isDarkMode", window.document.documentElement.classList.contains("dark"));
   };
 
+  const removeFromCart = (productId) => {
+    const updatedCartItems = [...cartItems];
+    const existingItemIndex = cartItems.findIndex(
+      (item) => item.product.id === productId
+    );
+    updatedCartItems.splice(existingItemIndex, 1);
+    setCartItems(updatedCartItems);
+  }
+
   const addToCart = (product, qty, size) =>{
+    console.log("product =", product);
     if(qty && size){
       const updatedCartItems = [...cartItems];
-      const existingItemIndex = cartItems.findIndex(item => item.product.id === product.id);
+      const existingItemIndex = cartItems.findIndex((item) => item.product.id === product.id);
       if(existingItemIndex > -1){
         updatedCartItems[existingItemIndex].qty = qty;
         updatedCartItems[existingItemIndex].size = size;
@@ -50,7 +60,9 @@ export function App() {
       onClickCard={setCurrentShoe} />
     <Sidebar isOpen={isSidebarOpen} onClickClose={() => setIsSidebarOpen(false)} >
       <h2 className="mb-10 text-2xl font-bold">Cart</h2>
-      <Cart cartItems={cartItems} />
+      <Cart 
+        cartItems={cartItems} 
+        onClickTrash={removeFromCart} />
     </Sidebar>
     <div className='fixed bottom-4 right-4 '>
       <button 
